@@ -93,7 +93,14 @@ pip install -r requirements.txt
 - Train classification models and optimize performance
 
 ## Contributors
-- [Your Team Name]
+
+| Name       | GitHub Account                        | Reflection Video                 |
+|------------|---------------------------------------|----------------------------------|
+| **Laura MacKew**   | [@l-mack](https://github.com/l-mack) | [Video](INPUT LINK HERE) |
+| **Mahdi Zargaran**   | [@mxzargaran](https://github.com/mxzargaran) | [Video](INPUT LINK HERE) |
+| **Mohsen Ghaffari**| [@mohghaff](https://github.com/mohghaff) | [Video](INPUT LINK HERE) |
+| **Prashant Baisla**   | [@pbaisla](https://github.com/pbaisla) | [Video](INPUT LINK HERE) |
+| **Whitney Mak**   | [@wmak-eng](https://github.com/wmak-eng) | [Video](INPUT LINK HERE) |
 
 ## Acknowledgments
 - Data sourced from UCI Machine Learning Repository
