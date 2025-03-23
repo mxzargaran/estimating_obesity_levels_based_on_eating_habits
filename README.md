@@ -222,6 +222,9 @@ pip install -r requirements.txt
 ## Acknowledgments
 - Data sourced from UCI Machine Learning Repository
 - University of Toronto Data Science Institute guidance
+
+## Presentation
+Please find a link to slides used in a presentation of these findings [here](https://docs.google.com/presentation/d/1cOd0nBYNI-o0RPnFu9SHcvhsmV9YmuPeFJKVdAxhK5c/edit?slide=id.g342b201c8ea_0_188#slide=id.g342b201c8ea_0_188). 
   
 
 ## References
