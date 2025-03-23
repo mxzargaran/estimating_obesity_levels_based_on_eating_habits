@@ -1,5 +1,21 @@
 # Predicting Obesity Levels Using Lifestyle, Eating Habits, and Physical Activity Patterns
 
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Research Question](#research-question)
+3. [Dataset Information](#dataset-information)
+3. [Stakeholders](#stakeholders)
+4. [Value to the Industry](#value-to-the-industry)
+5. [Risks and Uncertainties](#risks-and-uncertainties)
+6. [Required Libraries and Tools](#required-libraries-and-tools)
+7. [Methodology](#methodology)
+8. [Results](#results)
+9. [Model Evaluation](#model-evaluation)
+10. [Team Contributors](#team-contributors)
+11. [Acknowledgments](#acknowledgments)
+12. [Presentation](#presentation)
+13. [References](#references)
+
 ## Project Overview
 Obesity is a major public health challenge, contributing to an increased risk of chronic diseases such as diabetes, cardiovascular conditions, and metabolic disorders (Centers for Disease Control and Prevention [CDC], 2022; World Health Organization [WHO], 2023). Understanding the key lifestyle and dietary factors that contribute to obesity is crucial for designing effective, data-driven interventions to promote healthier living.
 
@@ -9,6 +25,9 @@ By identifying the most influential predictors of obesity, this model can help h
 
 ## Research Question
 **Which lifestyle and dietary habits contribute most to obesity?**
+
+Can This Dataset Answer Our Research Question?
+- **Yes.** The dataset provides demographic information, physical conditions, and lifestyle habits, which are relevant factors for obesity prediction.
 
 ## Dataset Information
 - **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition)
@@ -27,7 +46,7 @@ By identifying the most influential predictors of obesity, this model can help h
 	5.	Obesity Type II
 	6.	Obesity Type III
 
-## Stakeholders & Their Interest
+## Stakeholders
 **Primary Stakeholders:**
 1. **Healthcare Professionals & Researchers** – Interested in understanding how lifestyle factors contribute to obesity.
 2. **Public Health Organizations** – Can use insights to develop better awareness campaigns and preventive healthcare programs.
@@ -35,20 +54,17 @@ By identifying the most influential predictors of obesity, this model can help h
 4. **Fitness & Nutrition Industries** – Businesses in the health sector can leverage findings to develop personalized diet and exercise programs.
 5. **Individuals Concerned About Health** – The general public can benefit from personalized risk assessments based on lifestyle habits.
 
-## Can This Dataset Answer Our Research Question?
-- **Yes.** The dataset provides demographic information, physical conditions, and lifestyle habits, which are relevant factors for obesity prediction.
-
 ## Value to the Industry
 - **Healthcare** – Helps identify key lifestyle-related risk factors for obesity and prevention strategies.
 - **Public Health & Policy** – Supports better policy-making for obesity-related health risks.
 - **Fitness & Nutrition** – Enables data-driven recommendations for healthier living.
 
-## Risks & Uncertainties
+## Risks and Uncertainties
 1. **Self-Reported Data** – Eating habits and physical activity are self-reported, introducing potential bias.
 2. **Generalization Issues** – The dataset's population may not be fully representative of all demographics, limiting external validity.
 3. **Feature Limitations** – Critical medical factors (e.g., blood pressure, cholesterol) affecting obesity risk are missing.
 
-## Required Libraries & Tools
+## Required Libraries and Tools
 •	**Python**: Data processing & modeling.
 
 •	**Pandas, NumPy**: Data handling & numerical operations.
@@ -185,31 +201,7 @@ We also conducted an analysis of ethical factors with the following findings:
 The Random Forest model with selected features provided a robust tool for predicting obesity levels based on demographic and health-related factors. The model's high accuracy and balanced performance across classes make it suitable for real-world applications in healthcare and wellness programs, with appropriate ethical safeguards.
 
 
-
-## Folder Structure
-```
-/project_root  
-│── data/                  # Raw & processed data  
-│── notebooks/             # Jupyter Notebooks for EDA, modeling  
-│── src/                   # Scripts (data processing, model training)  
-│── reports/               # Visualizations, findings  
-│── models/                # Saved models  
-│── requirements.txt       # Dependencies  
-│── README.md              # Project summary  
-│── .gitignore             # Exclude large files  
-```
-
-## Dependencies
-Install required packages using:
-```bash
-pip install -r requirements.txt
-```
-
-## Next Steps
-- Conduct EDA and feature selection
-- Train classification models and optimize performance
-
-## Contributors
+## Team Contributors
 
 | Name                | GitHub Account                               | Reflection Video                      |
 | ------------------- | -------------------------------------------- | ------------------------------------- |
