@@ -1,5 +1,23 @@
 # Predicting Obesity Levels Using Lifestyle, Eating Habits, and Physical Activity Patterns
 
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Research Question](#research-question)
+3. [Dataset Information](#dataset-information)
+4. [Stakeholders](#stakeholders)
+5. [Value to the Industry](#value-to-the-industry)
+6. [Risks and Uncertainties](#risks-and-uncertainties)
+7. [Required Libraries and Tools](#required-libraries-and-tools)
+8. [Methodology](#methodology)
+9. [Data Visualization](#data-visualization)
+10. [Data Preprocessing](#data-preprocessing)
+11. [Exploratory Data Analysis](#exploratory-data-analysis)
+12. [Model Evaluation](#model-evaluation)
+13. [Results](#results)
+14. [Team Contributors](#team-contributors)
+15. [Presentation](#presentation)
+16. [References and Acknowledgments](#references-and-acknowledgments)
+
 ## Project Overview
 Obesity is a major public health challenge, contributing to an increased risk of chronic diseases such as diabetes, cardiovascular conditions, and metabolic disorders (Centers for Disease Control and Prevention [CDC], 2022; World Health Organization [WHO], 2023). Understanding the key lifestyle and dietary factors that contribute to obesity is crucial for designing effective, data-driven interventions to promote healthier living.
 
@@ -10,12 +28,15 @@ By identifying the most influential predictors of obesity, this model can help h
 ## Research Question
 **Which lifestyle and dietary habits contribute most to obesity?**
 
+Can This Dataset Answer Our Research Question?
+- **Yes.** The dataset provides demographic information, physical conditions, and lifestyle habits, which are relevant factors for obesity prediction.
+
 ## Dataset Information
 - **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition)
 - **Description:** The dataset contains demographic information, eating habits, and physical condition indicators that help estimate obesity levels.
 - **Dataset Features:**
   - Demographics: Age, Gender
-  - Physical Conditions: Physical Conditions: Height, Weight, BMI (derived feature), Physical activity frequency (FAF)
+  - Physical Conditions: Height, Weight, BMI (derived feature), Physical activity frequency (FAF)
   - Eating Habits: High-calorie food consumption (FAVC), Vegetable consumption (FCVC), Number of main meals per day (NCP), Eating between meals (CAEC)
   - Lifestyle Factors: Alcohol consumption frequency (CALC), Smoking (SMOKE), Water intake (CH2O), Screen time/technology usage (TUE), Transportation mode (MTRANS)
   - Health Indicators: Family history of overweight (family_history_with_overweight), Caloric monitoring (SCC)
@@ -28,7 +49,7 @@ By identifying the most influential predictors of obesity, this model can help h
       6.	Obesity Type II
       7.	Obesity Type III
 
-## Stakeholders & Their Interest
+## Stakeholders
 **Primary Stakeholders:**
 1. **Healthcare Professionals & Researchers** – Interested in understanding how lifestyle factors contribute to obesity.
 2. **Public Health Organizations** – Can use insights to develop better awareness campaigns and preventive healthcare programs.
@@ -36,20 +57,17 @@ By identifying the most influential predictors of obesity, this model can help h
 4. **Fitness & Nutrition Industries** – Businesses in the health sector can leverage findings to develop personalized diet and exercise programs.
 5. **Individuals Concerned About Health** – The general public can benefit from personalized risk assessments based on lifestyle habits.
 
-## Can This Dataset Answer Our Research Question?
-- **Yes.** The dataset provides demographic information, physical conditions, and lifestyle habits, which are relevant factors for obesity prediction.
-
 ## Value to the Industry
 - **Healthcare** – Helps identify key lifestyle-related risk factors for obesity and prevention strategies.
 - **Public Health & Policy** – Supports better policy-making for obesity-related health risks.
 - **Fitness & Nutrition** – Enables data-driven recommendations for healthier living.
 
-## Risks & Uncertainties
+## Risks and Uncertainties
 1. **Self-Reported Data** – Eating habits and physical activity are self-reported, introducing potential bias.
 2. **Generalization Issues** – The dataset's population may not be fully representative of all demographics, limiting external validity.
 3. **Feature Limitations** – Critical medical factors (e.g., blood pressure, cholesterol) affecting obesity risk are missing.
 
-## Required Libraries & Tools
+## Required Libraries and Tools
 •	**Python**: Data processing & modeling.
 
 •	**Pandas, NumPy**: Data handling & numerical operations.
@@ -352,46 +370,6 @@ Most features show weak or negligible correlations, indicating that the numeric 
 - **MTRANS**: Transportation used
 - **NObeyesdad**: Obesity level classification (target variable)
 
-## Results
-
-Implementtion of our model and relevant output can be found [here](models/baseline_enhanced.ipynb).  Our findings indicate that demographic and health-related factors can effectively predict obesity levels with high accuracy. Through comprehensive model evaluation and feature selection, we achieved the following key results:
-
-1. **Model Performance**: Random Forest outperformed all other algorithms, achieving 96.17% accuracy on the test set after feature selection and hyperparameter tuning.
-
-2. **Key Predictors**: The top predictive factors for obesity levels were:
-   - Weight (29.52%)
-   - Age (9.82%)
-   - Height (9.12%)
-   - Frequency of consumption of vegetables (8.89%)
-   - Gender (6.00%)
-   - Number of main meals per day (5.55%)
-   - Physical activity frequency (4.96%)
-   - Technology usage time (4.69%)
-   - Water consumption (4.64%)
-   - Family history of overweight (3.12%)
-
-3. **Feature Selection Impact**: Feature selection improved performance for most models, particularly for Decision Trees (+1.20%) and Logistic Regression (+0.72%).  Analysis of feature importance can be found [here](data/Feature_Importance.ipynb). 
-
-4. **Bias Analysis**: No significant age-related bias was detected in model predictions, with consistent accuracy across age quartiles.
-
-What we see in the below confusion matrix is the model’s performance using all available features in the dataset.  Darker diagonal cells indicate correct classifications, while off-diagonal cells represent misclassifications.  The model is performing well overall but has some misclassifications, particularly in distinguishing Overweight Level I and Normal Weight.
-
-![ ](reports/figures/cm_Random_Forest_all_features.png)
-
-The below confusion matrix reveals the model’s performance after feature selection, where only the most important features were used.  The performance remains strong, and in some cases, misclassifications are reduced (e.g., Insufficient Weight and Normal Weight have fewer errors). Feature selection has not significantly reduced accuracy, meaning fewer features can achieve comparable results, improving efficiency.
-
-![ ](reports/figures/cm_Random_Forest_selected_features.png)
-
-The following chart shows the most influential factors in predicting obesity levels using our Random Forest model.
-
-![ ](reports/figures/feature_importance.png)
-
-Weight is by far the most important predictor, contributing the most to the model’s decisions.  Age & Height also play a significant role, highlighting the natural relationship between body composition and obesity.  
-
-Eating habits matter: FCVC (Frequency of Vegetable Consumption) and NCP (Number of Meals per Day) are among the top predictors.  
-
-Physical activity is key: FAF (Frequency of Physical Activity) and TUE (Time Using Electronics/Screen Time) both contribute to obesity risk.  Other lifestyle factors, such as water intake (CH2O), family history of overweight, and alcohol consumption habits (CALC, CAEC), also have some influence.
-
 
 ## Model Evaluation
 
@@ -450,32 +428,53 @@ We also conducted an analysis of ethical factors with the following findings:
 2. Privacy considerations should be addressed for this dataset as it pertains to people's health information.
 3. One should consider the results as a supportive tool and not a replacement for medical advice.
 
-### Conclusion
+### Model Conclusion
 
 The Random Forest model with selected features provided a robust tool for predicting obesity levels based on demographic and health-related factors. The model's high accuracy and balanced performance across classes make it suitable for real-world applications in healthcare and wellness programs, with appropriate ethical safeguards.
 
 
+## Results
 
-## Folder Structure
-```
-/project_root  
-│── data/                  # Raw & processed data  
-│── notebooks/             # Jupyter Notebooks for EDA, modeling  
-│── src/                   # Scripts (data processing, model training)  
-│── reports/               # Visualizations, findings  
-│── models/                # Saved models  
-│── requirements.txt       # Dependencies  
-│── README.md              # Project summary  
-│── .gitignore             # Exclude large files  
-```
+Implementation of our model and relevant output can be found [here](models/baseline_enhanced.ipynb).  Our findings indicate that demographic and health-related factors can effectively predict obesity levels with high accuracy. Through comprehensive model evaluation and feature selection, we achieved the following key results:
 
-## Dependencies
-Install required packages using:
-```bash
-pip install -r requirements.txt
-```
+1. **Model Performance**: Random Forest outperformed all other algorithms, achieving 96.17% accuracy on the test set after feature selection and hyperparameter tuning.
 
-## Contributors
+2. **Key Predictors**: The top predictive factors for obesity levels were:
+   - Weight (29.52%)
+   - Age (9.82%)
+   - Height (9.12%)
+   - Frequency of consumption of vegetables (8.89%)
+   - Gender (6.00%)
+   - Number of main meals per day (5.55%)
+   - Physical activity frequency (4.96%)
+   - Technology usage time (4.69%)
+   - Water consumption (4.64%)
+   - Family history of overweight (3.12%)
+
+3. **Feature Selection Impact**: Feature selection improved performance for most models, particularly for Decision Trees (+1.20%) and Logistic Regression (+0.72%).  Analysis of feature importance can be found [here](data/Feature_Importance.ipynb). 
+
+4. **Bias Analysis**: No significant age-related bias was detected in model predictions, with consistent accuracy across age quartiles.
+
+What we see in the below confusion matrix is the model’s performance using all available features in the dataset.  Darker diagonal cells indicate correct classifications, while off-diagonal cells represent misclassifications.  The model is performing well overall but has some misclassifications, particularly in distinguishing Overweight Level I and Normal Weight.
+
+![ ](reports/figures/cm_Random_Forest_all_features.png)
+
+The below confusion matrix reveals the model’s performance after feature selection, where only the most important features were used.  The performance remains strong, and in some cases, misclassifications are reduced (e.g., Insufficient Weight and Normal Weight have fewer errors). Feature selection has not significantly reduced accuracy, meaning fewer features can achieve comparable results, improving efficiency.
+
+![ ](reports/figures/cm_Random_Forest_selected_features.png)
+
+The following chart shows the most influential factors in predicting obesity levels using our Random Forest model.
+
+![ ](reports/figures/feature_importance.png)
+
+Weight is by far the most important predictor, contributing the most to the model’s decisions.  Age & Height also play a significant role, highlighting the natural relationship between body composition and obesity.  
+
+Eating habits matter: FCVC (Frequency of Vegetable Consumption) and NCP (Number of Meals per Day) are among the top predictors.  
+
+Physical activity is key: FAF (Frequency of Physical Activity) and TUE (Time Using Electronics/Screen Time) both contribute to obesity risk.  Other lifestyle factors, such as water intake (CH2O), family history of overweight, and alcohol consumption habits (CALC, CAEC), also have some influence.
+
+
+## Team Contributors
 
 | Name                | GitHub Account                               | Reflection Video                      |
 | ------------------- | -------------------------------------------- | ------------------------------------- |
@@ -483,17 +482,15 @@ pip install -r requirements.txt
 | **Mahdi Zargaran**  | [@mxzargaran](https://github.com/mxzargaran) | [Video](INPUT LINK HERE)              |
 | **Mohsen Ghaffari** | [@mohghaff](https://github.com/mohghaff)     | [Video](https://youtu.be/mBV62Mfe68w) |
 | **Prashant Baisla** | [@pbaisla](https://github.com/pbaisla)       | [Video](INPUT LINK HERE)              |
-| **Whitney Mak**     | [@wmak-eng](https://github.com/wmak-eng)     | [Video](INPUT LINK HERE)              |
+| **Whitney Mak**     | [@wmak-eng](https://github.com/wmak-eng)     | [Video](https://drive.google.com/file/d/1qGA2EOmCABQfiQbYO77Rk6915qGYK3ha/view?usp=drive_link) |
 
-## Acknowledgments
-- Data sourced from UCI Machine Learning Repository
-- University of Toronto Data Science Institute guidance
 
 ## Presentation
 Please find a link to slides used in a presentation of these findings [here](https://docs.google.com/presentation/d/1cOd0nBYNI-o0RPnFu9SHcvhsmV9YmuPeFJKVdAxhK5c/edit?slide=id.g342b201c8ea_0_188#slide=id.g342b201c8ea_0_188). 
   
 
-## References
-Centers for Disease Control and Prevention. (2022). Adult obesity facts. U.S. Department of Health & Human Services. https://www.cdc.gov/obesity/data/adult.html
-
-World Health Organization. (2023). Obesity and overweight. https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight
+## References and Acknowledgments
+- Centers for Disease Control and Prevention. (2022). Adult obesity facts. U.S. Department of Health & Human Services. https://www.cdc.gov/obesity/data/adult.html
+- World Health Organization. (2023). Obesity and overweight. https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight
+- Data sourced from UCI Machine Learning Repository. https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition
+- University of Toronto Data Science Institute Guidance. https://github.com/UofT-DSI
