@@ -89,22 +89,22 @@ We conducted a comprehensive visualization analysis to understand how different 
 ### Numerical Feature Analysis
 
 #### Weight Distribution
-![Weight Distribution by Obesity Level](image-3.png)
+![Weight Distribution by Obesity Level](./src/images/image-3.png)
 
 #### Age and Height Distribution
-![Age and Distribution by Obesity Level](image-4.png)
-![Height and Distribution by Obesity Level](image-5.png)
+![Age and Distribution by Obesity Level](./src/images/image-4.png)
+![Height and Distribution by Obesity Level](./src/images/image-5.png)
 
 #### Lifestyle Factors
-![Vegetable Intake, Meal Count, Water Intake, Physical Activity, and Device Usage by Obesity Level](image-6.png)
+![Vegetable Intake, Meal Count, Water Intake, Physical Activity, and Device Usage by Obesity Level](./src/images/image-6.png)
 
-![Meal Count by Obesity Level](image-7.png)
+![Meal Count by Obesity Level](./src/images/image-7.png)
 
-![Water Intake by Obesity Level](image-8.png)
+![Water Intake by Obesity Level](./src/images/image-8.png)
 
-![Physical Activity, l](image-9.png)
+![Physical Activity, l](./src/images/image-9.png)
 
-![Device Usage by Obesity Level](image-10.png)
+![Device Usage by Obesity Level](./src/images/image-10.png)
 
 **Key Findings from Numerical Variables:**
 
@@ -159,24 +159,24 @@ We conducted a comprehensive visualization analysis to understand how different 
 ### Categorical Feature Analysis
 
 #### Gender Distribution
-![Gender Distribution by Obesity Level](image-11.png)
+![Gender Distribution by Obesity Level](./src/images/image-11.png)
 
 #### Family History of Overweight
-![Family History by Obesity Level](image-12.png)
+![Family History by Obesity Level](./src/images/image-12.png)
 
 #### High Caloric Food Consumption
-![High Caloric Intake by Obesity Level](image-13.png)
+![High Caloric Intake by Obesity Level](./src/images/image-13.png)
 
 #### Other Categorical Variables
-![Food Between Meals by Obesity Level](image-14.png)
+![Food Between Meals by Obesity Level](./src/images/image-14.png)
 
-![Smoking by Obesity Level](image-15.png)
+![Smoking by Obesity Level](./src/images/image-15.png)
 
-![Monitor Calories by Obesity Level](image-16.png)
+![Monitor Calories by Obesity Level](./src/images/image-16.png)
 
-![Alcohol Intake by Obesity Level](image-17.png)
+![Alcohol Intake by Obesity Level](./src/images/image-17.png)
 
-![Transportation by Obesity Level](image-18.png)
+![Transportation by Obesity Level](./src/images/image-18.png)
 
 **Key Findings from Categorical Variables:**
 
@@ -284,7 +284,7 @@ Identified 8 numerical columns: ['Age', 'Height', 'Weight', 'FCVC', 'NCP', 'CH2O
 ### Distribution Analysis
 
 #### Boxplot Distribution
-![Boxplots for Numerical Variables](image-2.png)
+![Boxplots for Numerical Variables](./src/images/image-2.png)
 
 **Observations from Boxplots:**
 - **Age**: Most individuals are between 20-26 years old, with outliers up to 61 years
@@ -299,7 +299,7 @@ Identified 8 numerical columns: ['Age', 'Height', 'Weight', 'FCVC', 'NCP', 'CH2O
 **Note**: We retained outliers as they represent real and important variations in the data that offer insights into specific cases or trends crucial for our analysis.
 
 #### Histogram Distribution
-![Distribution of Numerical Features](image-1.png)
+![Distribution of Numerical Features](./src/images/image-1.png)
 
 **Key Distribution Patterns:**
 - **Age**: Right-skewed distribution with most participants between 18-25 years, and a long tail extending to 61 years
@@ -328,7 +328,7 @@ Key behavioral factors include:
 
 ### Correlation Analysis
 
-![alt text](image.png)
+![alt text](./src/images/image.png)
 
 **Key Correlations:**
 - **Height and Weight**: Moderate positive correlation (0.46), as expected
