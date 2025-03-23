@@ -43,22 +43,23 @@ By identifying the most influential predictors of obesity, this model can help h
 - **Public Health & Policy** – Supports better policy-making for obesity-related health risks.
 - **Fitness & Nutrition** – Enables data-driven recommendations for healthier living.
 
-## How Will We Answer Our Business Question?
-- We will **analyze the relationships** between lifestyle factors (eating habits, physical activity, BMI) and obesity.
-- We will **identify key predictors** that correlate with obesity levels.
-
 ## Risks & Uncertainties
 1. **Self-Reported Data** – Eating habits and physical activity are self-reported, introducing potential bias.
 2. **Generalization Issues** – The dataset's population may not be fully representative of all demographics, limiting external validity.
 3. **Feature Limitations** – Critical medical factors (e.g., blood pressure, cholesterol) affecting obesity risk are missing.
 
 ## Required Libraries & Tools
-- **Data Analysis & Preprocessing:** Python (Pandas, NumPy, Scikit-learn)
-- **Exploratory Data Analysis (EDA):** 
-- **Feature Engineering:** Encoding categorical variables, handling missing data
-- **Machine Learning Models:** Logistic Regression, Random Forest, XGBoost
-- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score
-- **Project Management & Collaboration:** GitHub, Jupyter Notebooks
+•	**Python**: Data processing & modeling.
+
+•	**Pandas, NumPy**: Data handling & numerical operations.
+
+•	**Matplotlib & Seaborn**: Data & results visualization.
+
+•	**Scikit-Learn**:
+- Machine learning models (Logistic Regression, Decision Trees, Random Forest, KNN).
+- Feature selection (finding the most important predictors). 
+- Cross-validation & hyperparameter tuning (improving accuracy).
+
 
 ## Methodology
 1. **Data Preprocessing**
@@ -80,13 +81,110 @@ By identifying the most influential predictors of obesity, this model can help h
    - Compare model performance
    - Discuss potential real-world applications
 
-## Findings
 
-**Results**
+## Results
 
-- Our findings indicate that...
+Our findings indicate that demographic and health-related factors can effectively predict obesity levels with high accuracy. Through comprehensive model evaluation and feature selection, we achieved the following key results:
 
-**Model Evalution**
+1. **Model Performance**: Random Forest outperformed all other algorithms, achieving 96.17% accuracy on the test set after feature selection and hyperparameter tuning.
+
+2. **Key Predictors**: The top predictive factors for obesity levels were:
+   - Weight (29.52%)
+   - Age (9.82%)
+   - Height (9.12%)
+   - Frequency of consumption of vegetables (8.89%)
+   - Gender (6.00%)
+   - Number of main meals per day (5.55%)
+   - Physical activity frequency (4.96%)
+   - Technology usage time (4.69%)
+   - Water consumption (4.64%)
+   - Family history of overweight (3.12%)
+
+1. **Feature Selection Impact**: Feature selection improved performance for most models, particularly for Decision Trees (+1.20%) and Logistic Regression (+0.72%).
+
+2. **Bias Analysis**: No significant age-related bias was detected in model predictions, with consistent accuracy across age quartiles.
+
+What we see in the below confusion matrix is the model’s performance using all available features in the dataset.  Darker diagonal cells indicate correct classifications, while off-diagonal cells represent misclassifications.  The model is performing well overall but has some misclassifications, particularly in distinguishing Overweight Level I and Normal Weight.
+
+![ ](reports/figures/cm_Random_Forest_all_features.png)
+
+The below confusion matrix here reveals the model’s performance after feature selection, where only the most important features were used.  The performance remains strong, and in some cases, misclassifications are reduced (e.g., Insufficient Weight and Normal Weight have fewer errors). Feature selection has not significantly reduced accuracy, meaning fewer features can achieve comparable results, improving efficiency.
+
+![ ](reports/figures/cm_Random_Forest_selected_features.png)
+
+The following chart shows the most influential factors in predicting obesity levels using our Random Forest model.
+
+![ ](reports/figures/feature_importance.png)
+
+Weight is by far the most important predictor, contributing the most to the model’s decisions.  Age & Height also play a significant role, highlighting the natural relationship between body composition and obesity.  
+
+Eating habits matter: FCVC (Frequency of Vegetable Consumption) and NCP (Number of Meals per Day) are among the top predictors.  
+
+Physical activity is key: FAF (Frequency of Physical Activity) and TUE (Time Using Electronics/Screen Time) both contribute to obesity risk.  Other lifestyle factors, such as water intake (CH2O), family history of overweight, and alcohol consumption habits (CALC, CAEC), also have some influence.
+
+
+## Model Evaluation
+
+We evaluated six different machine learning models using 5-fold cross-validation, comparing their performance with all features and with selected features.
+
+### Model Performance Comparison
+
+| Model | All Features Accuracy | Selected Features Accuracy | Difference |
+|-------|----------------------|---------------------------|------------|
+| Random Forest | 95.93% | 96.17% | +0.24% |
+| Decision Tree | 92.82% | 94.02% | +1.20% |
+| Logistic Regression | 89.47% | 90.19% | +0.72% |
+| Logistic Regression (Balanced) | 89.95% | 89.23% | -0.72% |
+| KNN (k=5) | 83.97% | 80.14% | -3.83% |
+| KNN (k=7) | 81.10% | 78.47% | -2.63% |
+
+
+### Random Forest Performance (Best Model)
+
+The Random Forest model with selected features achieved:
+- Test accuracy: 96.17%
+- Excellent performance across all obesity level classes:
+
+| Class | Precision | Recall | F1-Score |
+|-------|-----------|--------|----------|
+| 0 | 0.98 | 0.98 | 0.98 |
+| 1 | 0.91 | 0.91 | 0.91 |
+| 2 | 1.00 | 0.97 | 0.99 |
+| 3 | 0.98 | 1.00 | 0.99 |
+| 4 | 1.00 | 0.98 | 0.99 |
+| 5 | 0.91 | 0.91 | 0.91 |
+| 6 | 0.93 | 0.97 | 0.95 |
+
+### Hyperparameter Tuning
+
+Hyperparameter tuning for the Random Forest model identified the following optimal parameters:
+- n_estimators: 200
+- max_depth: None
+- min_samples_split: 2
+- min_samples_leaf: 1
+
+The tuned model maintained the same test accuracy (96.17%) as the untuned model with selected features.
+
+### Cross-Validation Results
+
+Cross-validation performance for the best model (Random Forest with selected features):
+- Mean CV score: 95.33%
+- Standard deviation: 1.03%
+
+This indicates strong generalization capability and consistency across different data partitions.
+
+### Ethical Considerations
+
+We also conducted an analysis of ethical factors with the following findings:
+1. We did not detect any significant age-related bias (accuracy was consistent across age quartiles).
+2. Privacy considerations should be addressed for this dataset as it pertains to people's health information.
+3. One should consider the results as a supportive tool and not a replacement for medical advice.
+
+### Conclusion
+
+The Random Forest model with selected features provided a robust tool for predicting obesity levels based on demographic and health-related factors. The model's high accuracy and balanced performance across classes make it suitable for real-world applications in healthcare and wellness programs, with appropriate ethical safeguards.
+
+
 
 ## Folder Structure
 ```
@@ -113,17 +211,20 @@ pip install -r requirements.txt
 
 ## Contributors
 
-| Name                | GitHub Account                               | Reflection Video         |
-| ------------------- | -------------------------------------------- | ------------------------ |
-| **Laura MacKew**    | [@l-mack](https://github.com/l-mack)         | [Video](INPUT LINK HERE) |
-| **Mahdi Zargaran**  | [@mxzargaran](https://github.com/mxzargaran) | [Video](INPUT LINK HERE) |
+| Name                | GitHub Account                               | Reflection Video                      |
+| ------------------- | -------------------------------------------- | ------------------------------------- |
+| **Laura MacKew**    | [@l-mack](https://github.com/l-mack)         | [Video](INPUT LINK HERE)              |
+| **Mahdi Zargaran**  | [@mxzargaran](https://github.com/mxzargaran) | [Video](INPUT LINK HERE)              |
 | **Mohsen Ghaffari** | [@mohghaff](https://github.com/mohghaff)     | [Video](https://youtu.be/mBV62Mfe68w) |
-| **Prashant Baisla** | [@pbaisla](https://github.com/pbaisla)       | [Video](INPUT LINK HERE) |
-| **Whitney Mak**     | [@wmak-eng](https://github.com/wmak-eng)     | [Video](INPUT LINK HERE) |
+| **Prashant Baisla** | [@pbaisla](https://github.com/pbaisla)       | [Video](INPUT LINK HERE)              |
+| **Whitney Mak**     | [@wmak-eng](https://github.com/wmak-eng)     | [Video](INPUT LINK HERE)              |
 
 ## Acknowledgments
 - Data sourced from UCI Machine Learning Repository
 - University of Toronto Data Science Institute guidance
+
+## Presentation
+Please find a link to slides used in a presentation of these findings [here](https://docs.google.com/presentation/d/1cOd0nBYNI-o0RPnFu9SHcvhsmV9YmuPeFJKVdAxhK5c/edit?slide=id.g342b201c8ea_0_188#slide=id.g342b201c8ea_0_188). 
   
 
 ## References
