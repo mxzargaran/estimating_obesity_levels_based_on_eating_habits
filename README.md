@@ -217,7 +217,7 @@ pip install -r requirements.txt
 | **Mahdi Zargaran**  | [@mxzargaran](https://github.com/mxzargaran) | [Video](INPUT LINK HERE)              |
 | **Mohsen Ghaffari** | [@mohghaff](https://github.com/mohghaff)     | [Video](https://youtu.be/mBV62Mfe68w) |
 | **Prashant Baisla** | [@pbaisla](https://github.com/pbaisla)       | [Video](INPUT LINK HERE)              |
-| **Whitney Mak**     | [@wmak-eng](https://github.com/wmak-eng)     | [Video](INPUT LINK HERE)              |
+| **Whitney Mak**     | [@wmak-eng](https://github.com/wmak-eng)     | [Video](https://drive.google.com/file/d/1qGA2EOmCABQfiQbYO77Rk6915qGYK3ha/view?usp=drive_link) |
 
 ## Acknowledgments
 - Data sourced from UCI Machine Learning Repository
