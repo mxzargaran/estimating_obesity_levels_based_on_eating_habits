@@ -478,7 +478,7 @@ Physical activity is key: FAF (Frequency of Physical Activity) and TUE (Time Usi
 
 | Name                | GitHub Account                               | Reflection Video                      |
 | ------------------- | -------------------------------------------- | ------------------------------------- |
-| **Laura MacKew**    | [@l-mack](https://github.com/l-mack)         | [Video](INPUT LINK HERE)              |
+| **Laura MacKew**    | [@l-mack](https://github.com/l-mack)         | [Video](https://share.descript.com/view/4V67GXTJ8UD)              |
 | **Mahdi Zargaran**  | [@mxzargaran](https://github.com/mxzargaran) | [Video](INPUT LINK HERE)              |
 | **Mohsen Ghaffari** | [@mohghaff](https://github.com/mohghaff)     | [Video](https://youtu.be/mBV62Mfe68w) |
 | **Prashant Baisla** | [@pbaisla](https://github.com/pbaisla)       | [Video](INPUT LINK HERE)              |
